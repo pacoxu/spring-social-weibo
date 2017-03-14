@@ -48,7 +48,6 @@ public class AccountTemplateTest extends AbstractWeiboOperationsTest {
 				getRestTemplate(), true);
 	}
 
-	@Test
 	public void testGetRateLimitStatus() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/account/rate_limit_status.json"))

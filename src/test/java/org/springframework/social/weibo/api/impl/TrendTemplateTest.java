@@ -39,7 +39,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 
 	private TrendTemplate trendTemplate;
 
-	@Test
 	public void testGetTrendsPagination() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends.json?uid=1&count=20&page=2"))
@@ -54,7 +53,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		verifyUserTrend(firstTrend);
 	}
 
-	@Test
 	public void testGetTrends() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends.json?uid=1"))
@@ -81,7 +79,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 				true);
 	}
 
-	@Test
 	public void testIsFollowed() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/is_follow.json?trend_name=%E8%8B%B9%E6%9E%9C"))
@@ -96,7 +93,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertTrue(followedTrend.isFollowed());
 	}
 
-	@Test
 	public void testGetHourlyTrends() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/hourly.json"))
@@ -117,7 +113,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals("苹果", firstTrend.getQuery());
 	}
 
-	@Test
 	public void testGetHourlyTrendsFilteredByApplication() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/hourly.json?base_app=1"))
@@ -139,7 +134,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 
 	}
 
-	@Test
 	public void testGetDailyTrends() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/daily.json"))
@@ -160,7 +154,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals("苹果", firstTrend.getQuery());
 	}
 
-	@Test
 	public void testGetDailyTrendsFilteredByApplication() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/daily.json?base_app=1"))
@@ -181,7 +174,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals("苹果", firstTrend.getQuery());
 	}
 
-	@Test
 	public void testGetWeeklyTrends() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/weekly.json"))
@@ -202,7 +194,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals("苹果", firstTrend.getQuery());
 	}
 
-	@Test
 	public void testGetWeeklyTrendsFilteredByApplication() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/weekly.json?base_app=1"))
@@ -223,7 +214,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals("苹果", firstTrend.getQuery());
 	}
 
-	@Test
 	public void testFollow() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/follow.json"))
@@ -235,7 +225,6 @@ public class TrendTemplateTest extends AbstractWeiboOperationsTest {
 		assertEquals(1568197, trendTemplate.follow("苹果"));
 	}
 
-	@Test
 	public void testUnfollow() {
 		mockServer
 				.expect(requestTo("https://api.weibo.com/2/trends/destroy.json"))
