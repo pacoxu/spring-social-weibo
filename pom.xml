@@ -7,6 +7,10 @@
 	<name>Spring Social Weibo extension</name>
 	
 	<repositories>
+                <repository>
+                        <id>central</id>
+                         <url>http://central.maven.org/maven2/</url>
+                </repository>
 		<repository>
 			<id>org.springframework.maven.release</id>
 			<name>Spring Maven Release Repository</name>
